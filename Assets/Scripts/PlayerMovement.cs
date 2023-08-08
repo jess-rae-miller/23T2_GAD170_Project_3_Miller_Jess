@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -34,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     // How high the player can jump
     private float jumpHeight = 2f;
+
+    public int score;
 
     private void Start()
     {
@@ -72,13 +75,31 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
+        if(transform.position.y < -0.5)
+        {
+            GameOver();
+        }
+
         // This fakes gravity!
         velocity.y += gravity * Time.deltaTime;
+
 
         // This takes the Left/Right and Forward/Back values to build a vector
         Vector3 move = transform.right * x + transform.forward * z;
 
+
         // Finally, it applies that vector it just made to the character
         controller.Move(move * movementSpeed * Time.deltaTime + velocity * Time.deltaTime);
+    }
+
+    public void GameOver ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void AddScore (int amount)
+    {
+        score += amount;
+        // Update score text UI.
     }
 }
