@@ -6,10 +6,24 @@ using UnityEngine;
 public class JellyArea : MonoBehaviour
 {
     [SerializeField] private TextMeshPro textBox;
+    [SerializeField] private TextMeshPro pressEText;
+    [SerializeField] private bool isNextToButton;
+    [SerializeField] private GameObject fallingEnemy;
+    [SerializeField] private Transform spawnPoint;
 
     private void Start()
     {
         textBox.enabled = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && isNextToButton)
+        {
+            Debug.Log("You hit the button.");
+
+            Instantiate(fallingEnemy, spawnPoint.position, Random.rotation);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +33,8 @@ public class JellyArea : MonoBehaviour
 
         //restart the scene
         //UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.Getactivescene(0).buildindex);
-        textBox.enabled = true;
+        textBox.enabled = true; 
+       
     }
 
     private void OnTriggerExit(Collider other)
@@ -35,4 +50,12 @@ public class JellyArea : MonoBehaviour
     {
        // Debug.Log("In the jelly.");
     }
+
+    //private void OnTriggerEnter(Collider other)
+   // {
+        //if (other.CompareTag("Player"))
+       // {
+           //pressEText.enabled = true;
+       // }
+   // }
 }

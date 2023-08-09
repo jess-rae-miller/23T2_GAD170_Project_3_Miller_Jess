@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 5448371191559711221}
   - component: {fileID: 5448371191559711219}
   - component: {fileID: 5448371191559711220}
+  - component: {fileID: 500743059648156625}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Player
@@ -164,13 +165,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0
+  m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &5448371191559711220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +186,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 12
   score: 0
+--- !u!65 &500743059648156625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448371191559711222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7903621, z: 1}
+  m_Center: {x: 0, y: 0.8855089, z: 0}
 --- !u!1001 &5448371190232590482
 PrefabInstance:
   m_ObjectHideFlags: 0
