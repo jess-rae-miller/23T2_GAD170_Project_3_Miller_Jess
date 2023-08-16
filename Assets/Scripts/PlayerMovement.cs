@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     // These variables (visible in the inspector) are for you to set up to match the right feel
     [SerializeField] private float movementSpeed = 12f;
+    [SerializeField] private TextMeshProUGUI coinCounterText;
     private float yawSpeed = 2.0f;
     private float pitchSpeed = 2.0f;
     private float yawAngle = 0.0f;
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = -20f;
 
     // Tells the script how far to keep the object off the ground
-    private float groundDistance = 0.4f;
+   // private float groundDistance = 0.4f;
 
     // So the script knows if you can jump!
     private bool isGrounded;
@@ -75,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        if(transform.position.y < -0.5)
+        if(transform.position.y < -2)
         {
             GameOver();
         }
@@ -101,5 +103,6 @@ public class PlayerMovement : MonoBehaviour
     {
         score += amount;
         // Update score text UI.
+        coinCounterText.text = "Your score is: " + score;
     }
 }

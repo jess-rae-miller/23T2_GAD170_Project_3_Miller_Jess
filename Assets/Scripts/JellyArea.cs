@@ -33,8 +33,8 @@ public class JellyArea : MonoBehaviour
 
         //restart the scene
         //UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.Getactivescene(0).buildindex);
-        textBox.enabled = true; 
-       
+        textBox.enabled = true;
+        isNextToButton = true;
     }
 
     private void OnTriggerExit(Collider other)
@@ -44,6 +44,7 @@ public class JellyArea : MonoBehaviour
         // GetComponent<Renderer>().material.color = Random.ColorHSV();
 
         textBox.enabled = false;
+        isNextToButton = false;
     }
 
     private void OnTriggerStay(Collider other)

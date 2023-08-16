@@ -384,6 +384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 12
+  coinCounterText: {fileID: 0}
+  score: 0
 --- !u!143 &270848066
 CharacterController:
   m_ObjectHideFlags: 0
@@ -858,6 +860,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21560831333b18f49bb8505e326d2bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
+  pressEText: {fileID: 0}
+  isNextToButton: 0
+  fallingEnemy: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!65 &508499362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1882,3 +1889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21560831333b18f49bb8505e326d2bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
+  pressEText: {fileID: 0}
+  isNextToButton: 0
+  fallingEnemy: {fileID: 0}
+  spawnPoint: {fileID: 0}
